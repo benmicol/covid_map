@@ -10,5 +10,6 @@ class HomeController < ApplicationController
             render :json => {:status => 200}
         else
             render :json => {:status => 404}
+        end
     end
 end
