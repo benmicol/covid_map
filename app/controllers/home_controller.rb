@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+    skip_before_action :verify_authenticity_token
     def index
         @data = CoronaDatum.pluck(:country, :confirmed_cases)
     end
