@@ -7,7 +7,7 @@ class HomeController < ApplicationController
         data = request.body.read
         if data.present?
             data = JSON.parse(data)
-            data['Countries'].each do |hash| CoronaData.find_by(country: hash['CountryCode']).update(confirmed_cases: hash['TotalConfirmed']) end
+            data['Countries'].each do |hash| CoronaDatum.find_by(country: hash['CountryCode']).update(confirmed_cases: hash['TotalConfirmed']) end
             render :json => {:status => 200}
         else
             render :json => {:status => 404}
